@@ -2,7 +2,7 @@
 
 module.exports = function (environment) {
   let ENV = {
-    modulePrefix: 'extend-controller',
+    modulePrefix: 'ember-render',
     environment,
     rootURL: '/',
     locationType: 'auto',

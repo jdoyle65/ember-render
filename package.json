@@ -1,8 +1,8 @@
 {
-  "name": "extend-controller",
+  "name": "ember-render",
   "version": "0.0.0",
   "private": true,
-  "description": "Small description for extend-controller goes here",
+  "description": "Small description for ember-render goes here",
   "repository": "",
   "license": "MIT",
   "author": "",
@@ -30,6 +30,7 @@
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
     "ember-auto-import": "^1.12.0",
+    "ember-classic-decorator": "^3.0.0",
     "ember-cli": "~3.28.5",
     "ember-cli-app-version": "^5.0.0",
     "ember-cli-babel": "^7.26.10",
