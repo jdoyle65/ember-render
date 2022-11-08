@@ -1,0 +1,20 @@
+<div class='tw-mb-4'>
+  <UiButton @onClick={{this.updateFirstName}} @text='Change first name' />
+  <UiButton @onClick={{this.updateLastName}} @text='Change last name' />
+</div>
+
+<div class='tw-mb-4'>
+  <UiText @tagName='p' @bold={{true}} @text='Rendered Component:' />
+  <div class='tw-p-3 tw-bg-interactive-40 tw-rounded'>
+    <p>First name <i>(tracked)</i>: {{this.firstName}}</p>
+    <p>Last name <i>(untracked)</i>: {{this.lastName}}</p>
+    <p>Full name <i>(getter)</i>: {{this.fullName}}</p>
+  </div>
+</div>
+
+<UiText @tagName='p' @bold={{true}} @text='Code:' />
+<CodeBlock
+  {{did-insert this.updateCodeOutput}}
+  @code={{this.codeOutput}}
+  @language='js'
+/>

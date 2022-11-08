@@ -1,0 +1,13 @@
+<h1
+  class='tw-w-full tw-font-bold tw-leading-tight tw-my-6 tw-normal-case tw-font-headline tw-text-4xl'
+>Getters</h1>
+<p>
+  ES6 "get" accessors can be used in place of the old
+  <code>computed</code>
+  value. These accessors values get re-rendered every time one of the tracked
+  values they rely upon are changed
+</p>
+
+{{#let (get-code-snippet 'getters.js') as |snippet|}}
+  <CodeBlock @code={{snippet.source}} @language={{snippet.language}} />
+{{/let}}

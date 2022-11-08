@@ -1,0 +1,42 @@
+<h1
+  class='tw-w-full tw-font-bold tw-leading-tight tw-my-6 tw-normal-case tw-font-headline tw-text-4xl'
+>Ember Data Models</h1>
+<p class='tw-mb-2'>
+  Properties marked by an
+  <code>@attr</code>
+  decorator automatically become tracked properties.
+</p>
+<p class='tw-mb-2'>
+  In this example, both
+  <code>firstName</code>
+  and
+  <code>age</code>
+  are marked with the @attr decorator, however
+  <code>lastName</code>
+  and
+  <code>favouriteColour</code>
+  are not.
+</p>
+
+{{#let (get-code-snippet 'ember-data-models.js') as |snippet|}}
+  <CodeBlock @code={{snippet.source}} @language={{snippet.language}} />
+{{/let}}
+
+<p class='tw-mb-2'>
+  Clicking on the "Increase age" button causes the age value to increase then
+  re-render as expected, and clicking on the "Set random colour" button changes
+  the
+  <code>favouriteColour</code>
+  value, but does not trigger a re-render (as expected, since it is not a
+  tracked attribute).
+</p>
+<p class='tw-mb-2'>
+  However, note that
+  <code>lastName</code>
+  re-renders when its form field is updated, even though it's not a tracked
+  attribute. This is because
+  <code>{{'<UiForm>'}}</code>
+  sets the value of this property using the model's
+  <code>.set()</code>
+  function, which does track changes.
+</p>

@@ -1,0 +1,32 @@
+<div class='tw-mb-4'>
+  <UiForm @object={{@user}} as |f|>
+    <f.ui-text-field
+      @name='firstName'
+      @label='First name'
+      @onInput={{this.updateCodeOutput}}
+    />
+    <f.ui-text-field
+      @name='lastName'
+      @label='Last name'
+      @onInput={{this.updateCodeOutput}}
+    />
+  </UiForm>
+  <br />
+  <UiButton @onClick={{this.randomColour}} @text='Set random colour' />
+  <UiButton @onClick={{this.increaseAge}} @text='Increase age' />
+</div>
+
+<div class='tw-mb-4'>
+  <UiText @tagName='p' @bold={{true}} @text='Rendered Output:' />
+  <p>First name: {{@user.firstName}}</p>
+  <p>Last name: {{@user.lastName}}</p>
+  <p>Age: {{@user.age}}</p>
+  <p>Favourite colour: {{@user.favouriteColour}}</p>
+</div>
+
+<UiText @tagName='p' @bold={{true}} @text='Code:' />
+<CodeBlock
+  {{did-insert this.updateCodeOutput}}
+  @code={{this.codeOutput}}
+  @language='js'
+/>

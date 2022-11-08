@@ -1,0 +1,38 @@
+<div class='tw-mb-4'>
+  <UiButton @onClick={{this.increaseValues}} @text='Increment both values' />
+  <UiButton
+    @onClick={{this.increaseObjectValue}}
+    @text='Increment object value'
+  />
+  <br />
+  <UiToggle
+    @label='Replace object?'
+    @checked={{this.replaceObject}}
+    @toggleOnText='Yes'
+    @toggleOffText='No'
+  />
+</div>
+
+<div class='tw-mb-4'>
+  <UiText @tagName='p' @bold={{true}} @text='Rendered Component:' />
+  <div class='tw-p-3 tw-bg-interactive-40 tw-rounded'>
+    <strong>
+      Parent Component
+    </strong>
+    <p>Tracked Value: {{this.trackedValue}}</p>
+    <p>Untracked Value: {{this.untrackedValue}}</p>
+    <p>Tracked Object: { value: {{this.trackedObject.value}} }</p>
+    <ComponentArgs::SubComponent
+      @trackedValue={{this.trackedValue}}
+      @untrackedValue={{this.untrackedValue}}
+      @objectValue={{this.trackedObject.value}}
+    />
+  </div>
+</div>
+
+<UiText @tagName='p' @bold={{true}} @text='Code:' />
+<CodeBlock
+  {{did-insert this.updateCodeOutput}}
+  @code={{this.codeOutput}}
+  @language='js'
+/>

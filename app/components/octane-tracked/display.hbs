@@ -1,0 +1,19 @@
+<div class="tw-mb-4">
+  <UiButton @onClick={{this.toggleTrackedValue}} @text="Toggle Tracked Value" />
+  <UiButton @onClick={{this.toggleUntrackedValue}} @text="Toggle Untracked Value" />
+</div>
+
+<div class="tw-mb-4">
+  <UiText @tagName="p" @bold={{true}} @text="Rendered Component:" />
+  <div class="tw-flex tw-flex-row tw-gap-2 tw-bg-accent-100 tw-p-2 tw-text-white tw-rounded">
+    <p>Tracked value:</p>
+    <p class="tw-italic">{{this.trackedValue}}</p>
+  </div>
+  <div class="tw-flex tw-flex-row tw-gap-2 tw-bg-warning-80 tw-p-2 tw-rounded">
+    <p>Unracked value:</p>
+    <p class="tw-italic">{{this.untrackedValue}}</p>
+  </div>
+</div>
+
+<UiText @tagName="p" @bold={{true}} @text="Code:" />
+<CodeBlock {{did-insert this.updateCodeOutput}} @code={{this.codeOutput}} @language="js" />

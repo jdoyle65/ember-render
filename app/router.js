@@ -6,4 +6,10 @@ export default class Router extends EmberRouter {
   rootURL = config.rootURL;
 }
 
-Router.map(function () {});
+Router.map(function () {
+  this.route('tracked-values');
+  this.route('tracked-objects');
+  this.route('ember-data-models');
+  this.route('component-args');
+  this.route('getters');
+});

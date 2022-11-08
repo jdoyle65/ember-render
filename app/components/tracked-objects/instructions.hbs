@@ -1,0 +1,11 @@
+<h1
+  class='tw-w-full tw-font-bold tw-leading-tight tw-my-6 tw-normal-case tw-font-headline tw-text-4xl'
+>Tracked Objects</h1>
+<p>
+  Tracked values can be added to any class, not just
+  Components/Routes/Controllers.
+</p>
+
+{{#let (get-code-snippet 'tracked-objects.js') as |snippet|}}
+  <CodeBlock @code={{snippet.source}} @language={{snippet.language}} />
+{{/let}}

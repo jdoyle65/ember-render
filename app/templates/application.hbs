@@ -1,5 +1,26 @@
-{{page-title "ExtendController"}}
+{{page-title 'Ember Rendering'}}
 
-<h2 id="title">Welcome to Ember</h2>
-
-{{outlet}}
+<main>
+  <div class='tw-flex tw-justify-between tw-p-2'>
+    <div class='{{unless this.prevRoute "tw-invisible"}}'>
+      <UiLinkTo
+        @kind='tertiary'
+        @route={{this.prevRoute.name}}
+        @text={{this.prevRoute.title}}
+        @icon='chevron-left'
+        @iconPosition='left'
+      />
+    </div>
+    <div class='{{unless this.nextRoute "tw-invisible"}}'>
+      <UiLinkTo
+        @kind='tertiary'
+        @route={{this.nextRoute.name}}
+        @text={{this.nextRoute.title}}
+        @icon='chevron-right'
+        @iconPosition='right'
+      />
+    </div>
+  </div>
+  {{outlet}}
+</main>
+<UiIconSprite />
